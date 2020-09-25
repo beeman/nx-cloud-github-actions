@@ -14,7 +14,7 @@ jobs:
   build:
     env:
       NX_BRANCH: ${{ github.event.number }}
-      NX_RUN_GROUP: ${{ github.action }}
+      NX_RUN_GROUP: ${{ github.run_id }}
     runs-on: ${{ matrix.operating-system }}
     strategy:
       matrix:
