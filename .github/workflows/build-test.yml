@@ -18,17 +18,19 @@ jobs:
     runs-on: ${{ matrix.operating-system }}
     strategy:
       matrix:
+        node-version: [ 14.x ]
         operating-system: [ubuntu-latest]
     steps:
+      - uses: hmarr/debug-action@v1.0.0
       - uses: actions/checkout@v2
       - uses: actions/cache@v2
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-      - name: Setup node 12
+      - name: Setup node ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
-          node-version: 12.x
+          node-version: ${{ matrix.node-version }}
       - run: yarn
       - run: yarn build
       - run: yarn format:check
