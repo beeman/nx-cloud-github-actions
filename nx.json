@@ -18,16 +18,40 @@
       "runner": "@nrwl/nx-cloud",
       "options": {
         "accessToken": "YjkzMDAwZTctZGQyZC00YTlmLWFhZTgtNjE5ZjAzYjI0YzZifHJlYWQtd3JpdGU=",
-        "cacheableOperations": [
-          "build",
-          "test",
-          "lint",
-          "e2e"
-        ],
+        "cacheableOperations": ["build", "test", "lint", "e2e"],
         "canTrackAnalytics": false,
         "showUsageWarnings": true
       }
     }
   },
-  "projects": {}
+  "projects": {
+    "api": {
+      "tags": []
+    },
+    "api-data-access": {
+      "tags": ["scope:api", "type:data-access"]
+    },
+    "api-feature-core": {
+      "tags": ["scope:api", "type:feature"]
+    },
+    "api-feature-auth": {
+      "tags": ["scope:api", "type:feature"]
+    },
+    "admin": {
+      "tags": []
+    },
+    "admin-e2e": {
+      "tags": [],
+      "implicitDependencies": ["admin"]
+    },
+    "admin-data-access": {
+      "tags": ["scope:admin", "type:data-access"]
+    },
+    "admin-feature-shell": {
+      "tags": ["scope:admin", "type:feature"]
+    },
+    "admin-feature-auth": {
+      "tags": ["scope:admin", "type:feature"]
+    }
+  }
 }

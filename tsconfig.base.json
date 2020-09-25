@@ -15,7 +15,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nx-cloud-github-actions/api/data-access": ["libs/api/data-access/src/index.ts"],
+      "@nx-cloud-github-actions/api/feature-core": ["libs/api/feature-core/src/index.ts"],
+      "@nx-cloud-github-actions/api/feature-auth": ["libs/api/feature-auth/src/index.ts"],
+      "@nx-cloud-github-actions/admin/data-access": ["libs/admin/data-access/src/index.ts"],
+      "@nx-cloud-github-actions/admin/feature-shell": ["libs/admin/feature-shell/src/index.ts"],
+      "@nx-cloud-github-actions/admin/feature-auth": ["libs/admin/feature-auth/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
