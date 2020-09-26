@@ -10,11 +10,12 @@ on:
     paths-ignore:
       - '**.md'
 
+env:
+  NX_BRANCH: ${{ github.event.number }}
+  NX_RUN_GROUP: ${{ github.run_id }}
+
 jobs:
   build:
-    env:
-      NX_BRANCH: ${{ github.event.number }}
-      NX_RUN_GROUP: ${{ github.run_id }}
     runs-on: ${{ matrix.operating-system }}
     strategy:
       matrix:
